@@ -1,0 +1,67 @@
+{
+  "private": true,
+  "name": "solid_principles_ts",
+  "version": "1.0.0",
+  "release": {
+    "repositoryUrl": "",
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/changelog",
+      "@semantic-release/git"
+    ]
+  },
+  "description": "SOLID Principles - Typescript",
+  "scripts": {
+    "dev": "npx nodemon --ext ts,yaml --ignore build --exec 'rm -rf build && tsc && node build/index.js'",
+    "compile": "npx tsc",
+    "start": "node build/index.js",
+    "test": "npx jest --coverage --setupFiles dotenv/config",
+    "test:watch": "jest --watchAll --setupFiles dotenv/config --noStackTrace",
+    "lint": "npx eslint -c .eslintrc.js src/**/*.ts",
+    "lint:fix": "npx eslint -c .eslintrc.js src/**/*.ts --fix",
+    "docker-build": "docker build -t rarolabs:argo-integration .",
+    "docker-run": "docker run -p 8000:8000 -t rarolabs:argo-integration",
+    "commit": "git-cz"
+  },
+  "keywords": [
+    "typescript",
+    "restfull",
+    "api"
+  ],
+  "author": "",
+  "license": "proprietary",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "tslib": "1.11.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.5",
+    "@semantic-release/commit-analyzer": "^6.3.2",
+    "@semantic-release/git": "^7.0.18",
+    "@semantic-release/npm": "^5.3.4",
+    "@semantic-release/release-notes-generator": "^7.3.2",
+    "@types/jest": "^24.0.21",
+    "@types/node": "^13.13.4",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "prettier": "^2.0.5",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.6.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
