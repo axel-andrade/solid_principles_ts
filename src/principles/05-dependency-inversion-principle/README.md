@@ -16,3 +16,6 @@ Inversão de Dependência não é igual a Injeção de Dependência, fique cient
 ##### Definição
 
 De acordo com a definição do DIP, um módulo de alto nível não deve depender de módulos de baixo nível, ambos devem depender da abstração. Então, a primeira coisa que precisamos fazer é identificar no nosso código qual é o módulo de alto nível e qual é o módulo de baixo nível. Módulo de alto nível é um módulo que depende de outros módulos.
+
+Na verdade, vamos chamar esse princípio de "Prefira
+Interfaces a Classes"
